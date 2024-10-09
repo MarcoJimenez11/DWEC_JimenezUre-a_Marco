@@ -148,3 +148,60 @@ for(let i = 0; i < numberLevels; i++){
 }
 
 console.log(triangle);
+
+//*************************************************************************************************** */
+
+// 10. Ask the user for a number between 3 and 25. Calculate its factorial.
+
+let numberFact = +prompt("Enter a number between 3 and 25");
+
+if(numberFact >= 3 && numberFact <= 25){
+    for (let i = numberFact - 1; i >= 1; i--) {
+        numberFact = numberFact * i;
+    }
+    console.log(numberFact);
+}else{
+    console.log("The number is not in the range");
+}
+
+//*************************************************************************************************** */
+
+// 11. Ask the user for a string and write a program that checks if it is palindrome (it is spelled
+//     the same forward and backward).
+
+let text = prompt("Enter a text");
+
+let textReversed = "";
+
+for (let i = text.length - 1; i >= 0; i--) { 
+    textReversed += text[i];
+}
+
+if(text == textReversed){
+    console.log("It's a palindrome");
+}else{
+    console.log("It's not a palindrome");
+}
+
+//*************************************************************************************************** */
+
+// 12. Use the following code to generate a random pin number of 4 digits. Write code to allow
+// a user to try to guess the number in 4 attempts
+
+let numeroAleatorio = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
+
+console.log(numeroAleatorio);
+
+let tries = 4;
+
+do{
+    let numGuess = +prompt("Enter a number");
+    
+    if(numGuess == numeroAleatorio){
+        console.log("You guessed it!");
+        tries = 0;
+    }else{
+        console.log("Try again");
+        tries--;
+    }
+}while(tries > 0);
